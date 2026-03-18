@@ -70,5 +70,14 @@
       }
     }
   },
-  "skipDangerousModePermissionPrompt": true
+  "skipDangerousModePermissionPrompt": true,
+  "attribution": {
+    "commits": true,
+    "pullRequests": true
+  },
+  "env": {
+    "BASH_DEFAULT_TIMEOUT_MS": "60000",
+    "MCP_TIMEOUT": "30000"
+  },
+  "enableAllProjectMcpServers": false
 }
