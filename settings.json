@@ -4,7 +4,10 @@
     "MCP_TIMEOUT": "30000",
     "ECC_HOOK_PROFILE": "standard",
     "ECC_DISABLED_HOOKS": "session:start",
-    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1",
+    "ENABLE_PROMPT_CACHING_1H": "true",
+    "FORCE_PROMPT_CACHING_5M": "false",
+    "CLAUDE_CODE_ENABLE_AWAY_SUMMARY": "true"
   },
   "attribution": {},
   "permissions": {
@@ -47,6 +50,7 @@
     ],
     "defaultMode": "bypassPermissions"
   },
+  "model": "sonnet",
   "enableAllProjectMcpServers": false,
   "statusLine": {
     "type": "command",
@@ -60,7 +64,6 @@
     "python-development@claude-code-workflows": true,
     "claude-md-management@claude-plugins-official": true,
     "data-engineering@claude-code-workflows": true,
-    "codex@dexp-ai-toolkits": true,
     "example-skills@anthropic-agent-skills": true,
     "superpowers@claude-plugins-official": true,
     "code-review@claude-plugins-official": true,
@@ -68,7 +71,9 @@
     "feature-dev@claude-plugins-official": true,
     "claude-hud@claude-hud": true,
     "telegram@claude-plugins-official": true,
-    "everything-claude-code@everything-claude-code": true
+    "everything-claude-code@everything-claude-code": true,
+    "codex@openai-codex": true,
+    "skills-cleaner@skills-cleaner": true
   },
   "extraKnownMarketplaces": {
     "dexp-ai-toolkits": {
@@ -95,8 +100,33 @@
         "source": "github",
         "repo": "affaan-m/everything-claude-code"
       }
+    },
+    "openai-codex": {
+      "source": {
+        "source": "github",
+        "repo": "openai/codex-plugin-cc"
+      }
+    },
+    "skills-cleaner": {
+      "source": {
+        "source": "github",
+        "repo": "amebahead/skills-cleaner"
+      }
     }
   },
   "skipDangerousModePermissionPrompt": true,
-  "remoteControlAtStartup": true
+  "remoteControlAtStartup": true,
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/ivan/.claude/hooks/rtk-rewrite.sh"
+          }
+        ]
+      }
+    ]
+  }
 }

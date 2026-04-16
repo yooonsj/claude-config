@@ -341,6 +341,9 @@ settings.json에 선언되지만 자동 설치되지 않음. 새 머신에서는
 | `CLAUDE_CODE_SUBAGENT_MODEL` | sonnet | 서브에이전트 모델. haiku로 바꾸면 토큰 절약 |
 | `DISABLE_TELEMETRY` | 0 | 1로 설정 시 텔레메트리 비활성화 |
 | `CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC` | 0 | 1로 설정 시 자동 업데이트, 버그 리포트, 에러 리포팅, 텔레메트리 모두 비활성화 |
+| `ENABLE_PROMPT_CACHING_1H` | - | `true`로 설정 시 프롬프트 캐시 TTL을 기본 5분에서 1시간으로 연장. 반복 컨텍스트가 많을 때 토큰 절약 |
+| `FORCE_PROMPT_CACHING_5M` | - | `true`로 설정 시 5분 TTL 캐싱 강제 활성화. `ENABLE_PROMPT_CACHING_1H`와 함께 쓰면 충돌하므로 `false` 권장 |
+| `CLAUDE_CODE_ENABLE_AWAY_SUMMARY` | - | `true`로 설정 시 자리 비움 후 복귀 시 그 사이에 발생한 작업 내용 요약 표시 |
 
 ---
 
